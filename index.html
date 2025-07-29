@@ -3,483 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NiR play | خبرهای روز بازی</title>
-    <meta name="description" content="NiR play - سایت خبری تخصصی بازی‌های ویدیویی زیر نظر هلدینگ اصلی NiR">
-    <meta name="keywords" content="NiR play, اخبار بازی, ارتباط با ما">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --light: #f1f1f1;
-            --dark: #0d0d1a;
-            --gray: #8a8a9e;
-        }
-        body {
-            font-family: 'Almarai', sans-serif;
-            background: var(--primary);
-            color: var(--light);
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background: linear-gradient(135deg, var(--secondary), var(--primary));
-            padding: 1.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .logo-icon {
-            font-size: 2.5rem;
-            color: var(--highlight);
-        }
-        .logo h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(45deg, #ff6b6b, #ffa502);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 900;
-            margin: 0;
-        }
-        .under-holding {
-            font-size: 1rem;
-            color: var(--gray);
-            margin-top: .4rem;
-            margin-bottom: 0.7rem;
-        }
-        nav {
-            margin-top: 1.3rem;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2.5rem;
-            padding: 0;
-        }
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: 700;
-            padding: .5rem 1rem;
-            border-radius: 8px;
-            transition: background .2s,color .2s;
-        }
-        nav a:hover, nav a.active {
-            background: var(--highlight);
-            color: #fff;
-        }
-        main {
-            flex: 1;
-            max-width: 800px;
-            width: 100%;
-            margin: 2.5rem auto 0 auto;
-            padding: 0 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-        /* News Section */
-        #news-section {
-            width: 100%;
-        }
-        .news-title {
-            font-size: 2rem;
-            color: var(--highlight);
-            margin-bottom: 1.3rem;
-            font-weight: 800;
-            text-align: center;
-        }
-        .news-list {
-            display: flex;
-            flex-direction: column;
-            gap: 2.2rem;
-        }
-        .news-card {
-            background: var(--secondary);
-            border-radius: 12px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-            overflow: hidden;
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            position: relative;
-        }
-        .news-card img, .news-card video {
-            max-width: 100%;
-            border-radius: 9px;
-            margin-bottom: 1rem;
-        }
-        .news-card .news-header {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: .7rem;
-        }
-        .news-card .news-titr {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-        .news-card .news-date {
-            font-size: .95rem;
-            color: var(--gray);
-            margin-right: auto;
-        }
-        .news-card .news-body {
-            font-size: 1.08rem;
-            color: var(--light);
-        }
-        /* Contact Section */
-        #contact-section {
-            background: var(--dark);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.13);
-            padding: 2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .contact-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: var(--highlight);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-        .contact-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            align-items: center;
-        }
-        .contact-list a {
-            color: var(--light);
-            font-size: 1.12rem;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-list a:hover {
-            color: var(--highlight);
-        }
-        /* Main NiR Logo at Bottom */
-        .nir-bottom {
-            margin: 4rem 0 1rem 0;
-            text-align: center;
-        }
-        .nir-big {
-            font-size: 5rem;
-            font-weight: 900;
-            color: var(--highlight);
-            letter-spacing: .2rem;
-            cursor: pointer;
-            transition: text-shadow .2s;
-            user-select: none;
-        }
-        .nir-big:hover {
-            text-shadow: 0 0 25px var(--highlight);
-        }
-        /* Faith at very bottom */
-        .faith-bottom {
-            text-align: center;
-            color: #ffd700;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            margin-top: 1.6rem;
-            background: linear-gradient(90deg, #ffd700, #ffa500 80%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        /* Admin Panel */
-        .admin-modal-bg {
-            display: none;
-            position: fixed;
-            top:0;left:0;width:100vw;height:100vh;
-            background:rgba(17,18,28,0.7);
-            justify-content:center;align-items:center;
-            z-index:10000;
-        }
-        .admin-modal-bg.active { display: flex;}
-        .admin-modal {
-            background: var(--dark);
-            border-radius: 14px;
-            box-shadow: 0 7px 32px rgba(0,0,0,.45);
-            padding: 2.5rem 2rem;
-            width: 96vw;
-            max-width: 400px;
-            text-align: center;
-            position: relative;
-        }
-        .admin-modal h3 {
-            color: var(--highlight);
-            margin-bottom: 2rem;
-        }
-        .admin-modal input[type="password"] {
-            font-size: 1.1rem;
-            padding: .6rem 1rem;
-            border-radius: 8px;
-            border: none;
-            outline: none;
-            background: var(--secondary);
-            color: var(--light);
-            margin-bottom: 1.2rem;
-            width: 80%;
-            text-align: center;
-        }
-        .admin-modal .btn {
-            background: var(--highlight);
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            padding: .6rem 2rem;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: .7rem;
-            font-size: 1rem;
-            transition: background .2s;
-        }
-        .admin-modal .btn:hover { background: var(--accent);}
-        .admin-panel {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .admin-panel input, .admin-panel textarea {
-            width: 100%;
-            font-size: 1.08rem;
-            padding: .7rem;
-            border-radius: 8px;
-            border: 1px solid var(--gray);
-            margin-bottom: .7rem;
-            background: var(--secondary);
-            color: var(--light);
-            resize: none;
-        }
-        .admin-panel label {
-            text-align: right;
-            margin-bottom: .4rem;
-            font-size: 1.04rem;
-            color: var(--gray);
-        }
-        .admin-panel .btn {
-            width: 100%;
-            margin-top: 1rem;
-            font-size: 1.08rem;
-        }
-        .admin-panel .admin-close {
-            position: absolute;
-            top: 0.6rem;
-            left: 1rem;
-            font-size: 1.7rem;
-            color: var(--gray);
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        .admin-panel .admin-close:hover { color: var(--highlight);}
-        @media (max-width: 600px) {
-            .logo h1 { font-size: 1.6rem;}
-            .nir-big { font-size: 3.2rem;}
-            nav ul { gap: 1.2rem;}
-        }
-    </style>
+    <title>NiR Play - دنیای گیم</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <i class="fas fa-gamepad logo-icon"></i>
-            <h1>NiR play</h1>
+    <header class="header">
+        <div class="container">
+            <h1>NiR Play</h1>
+            <p>زیر نظر هلدینگ NiR</p>
         </div>
-        <div class="under-holding">زیر نظر هلدینگ اصلی NiR هستش</div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">خبرهای روز</a></li>
-                <li><a href="#contact-section">ارتباط با ما</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#news">اخبار</a></li>
+                <li><a href="#magazine">مجله</a></li>
+                <li><a href="#contact">ارتباط با ما</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <main>
-        <!-- News Section -->
-        <section id="news-section">
-            <div class="news-title">خبرهای روز</div>
-            <div class="news-list" id="news-list">
-                <!-- News items will appear here dynamically -->
+        <section id="news" class="news-section">
+            <div class="container">
+                <h2>آخرین اخبار</h2>
+                <div id="news-container">
+                    <!-- اخبار به‌صورت داینامیک بارگذاری می‌شوند -->
+                </div>
             </div>
         </section>
-        <!-- Contact Section -->
-        <section id="contact-section">
-            <div class="contact-title">ارتباط با ما</div>
-            <div class="contact-list">
-                <a href="mailto:info@nir-play.ir"><i class="fas fa-envelope"></i> info@nir-play.ir</a>
-                <a href="https://t.me/yourchannel" target="_blank"><i class="fab fa-telegram"></i> تلگرام</a>
-                <a href="https://instagram.com/yourpage" target="_blank"><i class="fab fa-instagram"></i> اینستاگرام</a>
+
+        <section id="magazine" class="magazine-section">
+            <div class="container">
+                <h2>مجله ماهانه NiR Play</h2>
+                <p>برای مشاهده شماره‌های قبلی مجله، اینجا کلیک کنید.</p>
             </div>
         </section>
     </main>
-    <!-- NiR Large Logo at the Bottom -->
-    <div class="nir-bottom">
-        <div class="nir-big" id="nirSecret">NiR</div>
-    </div>
-    <!-- Faith at very bottom -->
-    <div class="faith-bottom">
-        "اول به خدا ایمان دارم و کمک می‌خواهم و بعد از شما کمک می‌خواهم"
-    </div>
-    <!-- Admin Modal (Hidden by default) -->
-    <div class="admin-modal-bg" id="adminModalBg">
-        <div class="admin-modal" id="adminModal">
-            <form id="pinForm" autocomplete="off" style="display:block;">
-                <h3>ورود مدیر سایت</h3>
-                <input type="password" id="adminPin" placeholder="کد دسترسی" maxlength="8" autocomplete="off"/>
-                <br>
-                <button type="submit" class="btn">ورود</button>
-            </form>
-            <form id="adminPanel" class="admin-panel" style="display:none;">
-                <button type="button" class="admin-close" id="closeAdmin">&times;</button>
-                <h3>افزودن خبر جدید</h3>
-                <label>تصویر یا ویدیو (اختیاری):</label>
-                <input type="file" id="mediaInput" accept="image/*,video/*">
-                <label>تیتر خبر:</label>
-                <input type="text" id="newsTitle" maxlength="80" placeholder="تیتر خبر را وارد کنید" required>
-                <label>متن خبر:</label>
-                <textarea id="newsBody" rows="5" maxlength="800" placeholder="متن خبر را وارد کنید" required></textarea>
-                <button type="submit" class="btn">اضافه کردن</button>
-            </form>
+
+    <footer class="footer">
+        <div class="container">
+            <p>تمامی حقوق محفوظ است &copy; 2025 NiR Play</p>
+            <p>اینستاگرام: <a href="https://instagram.com/NiRplay" target="_blank">@NiRplay</a></p>
+            <p>تلگرام: <a href="https://t.me/NiRplaymagazine" target="_blank">@NiRplaymagazine</a></p>
         </div>
-    </div>
-    <script>
-        // اخبار را از localStorage یا حافظه می‌گیرد
-        function getNews() {
-            return JSON.parse(localStorage.getItem("nir_news") || "[]");
-        }
-        // ذخیره اخبار
-        function setNews(newsArr) {
-            localStorage.setItem("nir_news", JSON.stringify(newsArr));
-        }
-        // تاریخ به صورت شمسی ساده
-        function getDateStr() {
-            const now = new Date();
-            return now.toLocaleDateString("fa-IR") + " - " +
-                now.getHours().toString().padStart(2,"0")+":"+
-                now.getMinutes().toString().padStart(2,"0");
-        }
-        // نمایش اخبار
-        function renderNews() {
-            const newsListEl = document.getElementById('news-list');
-            const newsArr = getNews();
-            newsListEl.innerHTML = "";
-            if(!newsArr.length) {
-                newsListEl.innerHTML = "<div style='text-align:center;color:var(--gray);font-size:1.2rem;'>هنوز خبری ثبت نشده است.</div>";
-                return;
-            }
-            newsArr.reverse().forEach(item => {
-                let media = "";
-                if(item.mediaType && item.mediaData) {
-                    if(item.mediaType.startsWith("image")) {
-                        media = `<img src="${item.mediaData}" alt="news image">`
-                    } else if(item.mediaType.startsWith("video")) {
-                        media = `<video src="${item.mediaData}" controls></video>`
-                    }
-                }
-                newsListEl.innerHTML += `
-                    <div class="news-card">
-                        ${media}
-                        <div class="news-header">
-                            <div class="news-titr">${item.title}</div>
-                            <div class="news-date">${item.date}</div>
-                        </div>
-                        <div class="news-body">${item.body}</div>
-                    </div>
-                `;
-            });
-        }
+    </footer>
 
-        // مخفی کردن و باز کردن پنل مدیریت
-        const nirSecret = document.getElementById("nirSecret");
-        const adminModalBg = document.getElementById("adminModalBg");
-        const adminModal = document.getElementById("adminModal");
-        const pinForm = document.getElementById("pinForm");
-        const adminPanel = document.getElementById("adminPanel");
-        const closeAdmin = document.getElementById("closeAdmin");
-        let openTimeout = null;
-        let pinTries = 0;
-
-        nirSecret.addEventListener("click", () => {
-            adminModalBg.classList.add("active");
-            pinForm.style.display = "block";
-            adminPanel.style.display = "none";
-            document.getElementById("adminPin").value = "";
-            setTimeout(()=>document.getElementById("adminPin").focus(), 250);
-        });
-
-        // بستن پنل
-        closeAdmin.addEventListener("click", ()=>{
-            adminModalBg.classList.remove("active");
-        });
-        adminModalBg.addEventListener("click", e=>{
-            if(e.target === adminModalBg) adminModalBg.classList.remove("active");
-        });
-
-        // ورود مدیر با پین
-        pinForm.addEventListener("submit", e=>{
-            e.preventDefault();
-            const pin = document.getElementById("adminPin").value.trim();
-            if(pin === "7787") {
-                pinForm.style.display = "none";
-                adminPanel.style.display = "flex";
-            } else {
-                document.getElementById("adminPin").style.border="2px solid red";
-                pinTries++;
-                if(pinTries>=3) setTimeout(()=>adminModalBg.classList.remove("active"),600);
-            }
-        });
-
-        // افزودن خبر جدید
-        adminPanel.addEventListener("submit", async function(e){
-            e.preventDefault();
-            const title = document.getElementById("newsTitle").value.trim();
-            const body = document.getElementById("newsBody").value.trim();
-            const mediaInput = document.getElementById("mediaInput");
-            if(!title || !body) return;
-            let mediaType = "", mediaData = "";
-            if(mediaInput.files && mediaInput.files.length) {
-                const file = mediaInput.files[0];
-                mediaType = file.type;
-                mediaData = await new Promise(res=> {
-                    const reader = new FileReader();
-                    reader.onload = ev=>res(ev.target.result);
-                    reader.readAsDataURL(file);
-                });
-            }
-            const newsArr = getNews();
-            newsArr.push({
-                title, body, date: getDateStr(), mediaType, mediaData
-            });
-            setNews(newsArr);
-            renderNews();
-            this.reset();
-            adminModalBg.classList.remove("active");
-        });
-
-        // اولین بار اخبار را نمایش بده
-        renderNews();
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
